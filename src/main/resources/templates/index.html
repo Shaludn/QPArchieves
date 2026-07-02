@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>QP Archives</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<nav>
+    <h2>QP Archives</h2>
+    <div>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/login}">Upload QP</a>
+        <a th:href="@{/search}">Search QP</a>
+        <a th:href="@{/about}">About Us</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>Access Question Papers <span class="highlight">From Anywhere</span></h1>
+
+    <p>
+        The ultimate platform for students to upload, discover,
+        and access academic question papers easily.
+    </p>
+
+    <div>
+        <a th:href="@{/search}">
+            <button class="btn">Browse Papers</button>
+        </a>
+
+        <a th:href="@{/login}">
+            <button class="btn">Upload Paper</button>
+        </a>
+
+
+    </div>
+</div>
+
+<div class="section">
+    <h2>How It Works</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            Select your category (10th, 12th, Engineering)
+        </div>
+
+        <div class="card">
+            Choose subject and upload or search
+        </div>
+
+        <div class="card">
+            Access instantly anytime
+        </div>
+
+    </div>
+</div>
+
+<div class="section">
+
+    <h2>
+        Why Choose
+        <span class="highlight">QP Archives</span>?
+    </h2>
+
+    <div class="grid">
+
+        <div class="card">
+            Advanced filtering system
+        </div>
+
+        <div class="card">
+            Fast and easy upload
+        </div>
+
+        <div class="card">
+            Helps students collaborate
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 QP Archives
+</footer>
+
+</body>
+</html>

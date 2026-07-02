@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Register - QP Archives</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<nav>
+    <h2>QP Archives</h2>
+
+    <div>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/login}">Upload QP</a>
+        <a th:href="@{/search}">Search QP</a>
+        <a th:href="@{/about}">About Us</a>
+    </div>
+</nav>
+
+<div class="hero">
+
+    <h1>
+        Join
+        <span class="highlight">QP Archives</span>
+    </h1>
+
+    <p>
+        Create your account to upload and manage question papers.
+    </p>
+
+</div>
+
+<div class="center-box">
+
+    <div class="auth-card fade">
+
+        <h2>Create Account</h2>
+
+        <form th:action="@{/register}" method="post">
+
+            <input
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    required>
+
+            <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    required>
+
+            <input
+                    type="password"
+                    name="confirmPassword"
+                    placeholder="Confirm Password"
+                    required>
+
+            <button
+                    type="submit"
+                    class="auth-btn">
+
+                Register
+
+            </button>
+
+        </form>
+
+        <p
+                th:if="${error}"
+                th:text="${error}"
+                style="color:red;margin-top:15px;">
+        </p>
+
+        <p
+                th:if="${success}"
+                th:text="${success}"
+                style="color:limegreen;margin-top:15px;">
+        </p>
+
+        <hr style="margin:25px 0; opacity:.2;">
+
+        <p>
+            Already have an account?
+        </p>
+
+        <a th:href="@{/login}">
+
+            <button class="btn">
+
+                Login
+
+            </button>
+
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+
+    © 2026 QP Archives
+
+</footer>
+
+</body>
+</html>

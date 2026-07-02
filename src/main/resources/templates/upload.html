@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Upload QP</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<nav>
+    <h2>QP Archives</h2>
+    <div>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/login}">Upload QP</a>
+        <a th:href="@{/search}">Search QP</a>
+        <a th:href="@{/about}">About Us</a>
+    </div>
+</nav>
+
+<div class="center-box">
+
+    <div class="auth-card">
+
+        <h2 id="title">Login</h2>
+
+        <!-- LOGIN -->
+        <div id="loginSection">
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button type="button" class="auth-btn" onclick="login()">
+                Login
+            </button>
+        </div>
+
+        <!-- UPLOAD -->
+        <div id="uploadSection" style="display:none;">
+
+            <form th:action="@{/upload}" method="post" enctype="multipart/form-data">
+
+                <input
+                        type="text"
+                        name="qpName"
+                        placeholder="QP Name"
+                        required>
+
+                <select name="category" required>
+                    <option value="">Select Category</option>
+                    <option>Class 10</option>
+                    <option>Class 12</option>
+                    <option>Engineering</option>
+                </select>
+
+                <input
+                        type="text"
+                        name="university"
+                        placeholder="University / Board Name"
+                        required>
+
+                <input
+                        type="text"
+                        name="subject"
+                        placeholder="Subject Name"
+                        required>
+
+                <input
+                        type="file"
+                        name="file"
+                        accept=".pdf,image/*"
+                        required>
+
+                <button type="submit" class="auth-btn">
+                    Upload QP
+                </button>
+
+            </form>
+
+            <p id="message"
+               th:if="${message}"
+               th:text="${message}">
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script th:src="@{/js/script.js}"></script>
+
+</body>
+</html>

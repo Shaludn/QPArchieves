@@ -1,0 +1,1114 @@
+/* ===========================
+   GLOBAL
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:radial-gradient(circle at top,#06111d,#02070f 75%);
+
+    color:#eef7ff;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+
+    width:92%;
+
+    max-width:1320px;
+
+    margin:auto;
+
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+nav{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 60px;
+
+    background:rgba(5,12,24,.72);
+
+    backdrop-filter:blur(16px);
+
+    border-bottom:1px solid rgba(0,217,255,.08);
+
+}
+
+nav h2{
+
+    color:#00d9ff;
+
+    font-size:28px;
+
+    letter-spacing:1px;
+
+}
+
+nav div{
+
+    display:flex;
+
+    gap:25px;
+
+    align-items:center;
+
+}
+
+nav a{
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    position:relative;
+
+    transition:.35s;
+
+}
+
+nav a:hover{
+
+    color:#00d9ff;
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:#00d9ff;
+
+    transition:.35s;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+
+    width:92%;
+
+    max-width:1320px;
+
+    margin:55px auto 25px;
+
+    text-align:center;
+
+    animation:fadeIn .9s ease;
+
+}
+
+.hero h1{
+
+    font-size:clamp(42px,5vw,72px);
+
+    line-height:1.15;
+
+    font-weight:700;
+
+}
+
+.highlight{
+
+    background:linear-gradient(90deg,#00d9ff,#0b6fff);
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+.hero p{
+
+    max-width:760px;
+
+    margin:22px auto;
+
+    font-size:18px;
+
+    opacity:.82;
+
+    line-height:1.8;
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.btn{
+
+    margin:12px;
+
+    padding:14px 34px;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    background:linear-gradient(135deg,#00d9ff,#0077ff);
+
+    transition:.35s;
+
+    box-shadow:0 0 20px rgba(0,217,255,.18);
+
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 0 30px rgba(0,217,255,.45);
+
+}
+
+/* ===========================
+   SECTIONS
+=========================== */
+
+.section{
+
+    width:92%;
+
+    max-width:1320px;
+
+    margin:auto;
+
+    padding:45px 0;
+
+    animation:fadeUp .8s ease;
+
+}
+
+.section h2{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+    font-size:34px;
+
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:25px;
+
+}
+
+/* ===========================
+   CARDS
+=========================== */
+
+.card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    backdrop-filter:blur(14px);
+
+    border-radius:18px;
+
+    padding:26px;
+
+    transition:.35s;
+
+}
+
+.card h3{
+
+    color:#00d9ff;
+
+    margin-bottom:14px;
+
+}
+
+.card p{
+
+    line-height:1.7;
+
+    opacity:.88;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 0 35px rgba(0,217,255,.22);
+
+}
+
+/* ===========================
+   CENTER BOX
+=========================== */
+
+.center-box{
+
+    width:92%;
+
+    max-width:1320px;
+
+    margin:25px auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+/* ===========================
+   AUTH CARD
+=========================== */
+
+.auth-card{
+
+    width:100%;
+    max-width:460px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:35px;
+
+    box-shadow:0 0 35px rgba(0,217,255,.12);
+
+    transition:.35s;
+
+}
+
+.auth-card:hover{
+
+    box-shadow:0 0 45px rgba(0,217,255,.22);
+
+    transform:translateY(-4px);
+
+}
+
+.auth-card h2{
+
+    margin-bottom:25px;
+
+    text-align:center;
+
+    color:#00d9ff;
+
+    font-size:32px;
+
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+
+.auth-card input,
+.auth-card select{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    margin:12px 0;
+
+    border-radius:12px;
+
+    border:1px solid rgba(0,217,255,.35);
+
+    background:#000;
+
+    color:#fff;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.35s;
+
+}
+
+.auth-card input::placeholder{
+
+    color:#cfcfcf;
+
+}
+
+.auth-card input:focus,
+.auth-card select:focus{
+
+    border-color:#00d9ff;
+
+    box-shadow:0 0 14px rgba(0,217,255,.45);
+
+}
+
+/* ===========================
+   FILE INPUT
+=========================== */
+
+input[type=file]{
+
+    background:#000;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+input[type=file]::file-selector-button{
+
+    background:#00d9ff;
+
+    color:#000;
+
+    border:none;
+
+    padding:8px 18px;
+
+    border-radius:8px;
+
+    margin-right:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+input[type=file]::file-selector-button:hover{
+
+    background:#0bb8ff;
+
+}
+
+/* ===========================
+   DROPDOWN
+=========================== */
+
+.auth-card select{
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    -moz-appearance:none;
+
+    cursor:pointer;
+
+    padding-right:45px;
+
+    background-color:#000;
+
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+
+    background-repeat:no-repeat;
+
+    background-position:right 15px center;
+
+}
+
+.auth-card select option{
+
+    background:#000;
+
+    color:#fff;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.auth-btn{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-top:18px;
+
+    border:none;
+
+    border-radius:35px;
+
+    background:linear-gradient(135deg,#00d9ff,#0077ff);
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.auth-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 0 28px rgba(0,217,255,.45);
+
+}
+
+.auth-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-100%;
+
+    top:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,.4),transparent);
+
+    transition:.55s;
+
+}
+
+.auth-btn:hover::before{
+
+    left:100%;
+
+}
+
+/* ===========================
+   SUCCESS MESSAGE
+=========================== */
+
+#message{
+
+    margin-top:20px;
+
+    text-align:center;
+
+    color:#00ffae;
+
+    font-weight:600;
+
+}
+
+/* ===========================
+   TABLES
+=========================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:25px;
+
+    background:rgba(255,255,255,.04);
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+}
+
+th{
+
+    background:#00d9ff;
+
+    color:#000;
+
+    padding:16px;
+
+    text-align:left;
+
+}
+
+td{
+
+    padding:16px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+tr:hover{
+
+    background:rgba(255,255,255,.05);
+
+}
+
+/* ===========================
+   DOWNLOAD BUTTON
+=========================== */
+
+.download-btn{
+
+    display:inline-block;
+
+    padding:10px 22px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:linear-gradient(135deg,#00d9ff,#0077ff);
+
+    transition:.3s;
+
+}
+
+.download-btn:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 0 20px rgba(0,217,255,.45);
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    width:92%;
+
+    max-width:1320px;
+
+    margin:60px auto 25px;
+
+    text-align:center;
+
+    padding:20px;
+
+    opacity:.7;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+.fade{
+
+    animation:fadeUp .7s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width:1200px){
+
+    nav{
+
+        padding:20px 40px;
+
+    }
+
+    .hero h1{
+
+        font-size:56px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    nav{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        padding:20px;
+
+    }
+
+    nav div{
+
+        display:flex;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:18px;
+
+    }
+
+    .hero{
+
+        margin-top:40px;
+
+    }
+
+    .hero h1{
+
+        font-size:46px;
+
+    }
+
+    .hero p{
+
+        width:95%;
+
+        font-size:16px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .hero h1{
+
+        font-size:38px;
+
+    }
+
+    .hero p{
+
+        font-size:15px;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+        margin:10px 0;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .auth-card{
+
+        width:100%;
+
+        padding:28px;
+
+    }
+
+    table{
+
+        display:block;
+
+        overflow-x:auto;
+
+        white-space:nowrap;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    nav{
+
+        padding:18px;
+
+    }
+
+    nav h2{
+
+        font-size:24px;
+
+    }
+
+    nav div{
+
+        gap:14px;
+
+    }
+
+    nav a{
+
+        font-size:14px;
+
+    }
+
+    .hero{
+
+        margin-top:30px;
+
+    }
+
+    .hero h1{
+
+        font-size:32px;
+
+    }
+
+    .hero p{
+
+        font-size:14px;
+
+    }
+
+    .section h2{
+
+        font-size:28px;
+
+    }
+
+    .auth-card{
+
+        padding:24px;
+
+    }
+
+    .auth-card h2{
+
+        font-size:28px;
+
+    }
+
+    .auth-btn{
+
+        font-size:15px;
+
+    }
+
+}
+
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#05111c;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#00d9ff;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#008cff;
+
+}
+
+/* ==========================================
+   TEXT SELECTION
+========================================== */
+
+::selection{
+
+    background:#00d9ff;
+
+    color:#000;
+
+}
+
+/* ==========================================
+   LINKS
+========================================== */
+
+a{
+
+    transition:.3s;
+
+}
+
+a:hover{
+
+    text-decoration:none;
+
+}
+
+/* ==========================================
+   CARD ICONS
+========================================== */
+
+.card i{
+
+    color:#00d9ff;
+
+    font-size:34px;
+
+    margin-bottom:15px;
+
+}
+
+/* ==========================================
+   HERO ANIMATION
+========================================== */
+
+.hero h1{
+
+    animation:slideDown .9s ease;
+
+}
+
+.hero p{
+
+    animation:fadeIn 1.4s ease;
+
+}
+
+@keyframes slideDown{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   CARD HOVER EFFECT
+========================================== */
+
+.card{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-120%;
+
+    width:220%;
+
+    height:220%;
+
+    background:linear-gradient(135deg,
+            transparent,
+            rgba(0,217,255,.12),
+            transparent);
+
+    transform:rotate(25deg);
+
+    transition:.7s;
+
+}
+
+.card:hover::before{
+
+    top:-30%;
+
+    left:-30%;
+
+}
+
+/* ==========================================
+   BUTTON CLICK EFFECT
+========================================== */
+
+.btn:active,
+.auth-btn:active{
+
+    transform:scale(.96);
+
+}
+
+/* ==========================================
+   IMAGE STYLE
+========================================== */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+/* ==========================================
+   SMOOTH TRANSITIONS
+========================================== */
+
+*{
+
+    transition:
+            background .25s,
+            color .25s,
+            border-color .25s;
+
+}
+
+/* ==========================================
+   END OF FILE
+========================================== */

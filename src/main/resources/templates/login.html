@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login - QP Archives</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<nav>
+    <h2>QP Archives</h2>
+
+    <div>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/login}">Upload QP</a>
+        <a th:href="@{/search}">Search QP</a>
+        <a th:href="@{/about}">About Us</a>
+    </div>
+</nav>
+
+<div class="hero">
+
+    <h1>
+        Welcome Back to
+        <span class="highlight">QP Archives</span>
+    </h1>
+
+    <p>
+        Login to upload and manage your question papers.
+    </p>
+
+</div>
+
+<div class="center-box">
+
+    <div class="auth-card fade">
+
+        <h2>Login</h2>
+
+        <form th:action="@{/login}" method="post">
+
+            <input
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    required>
+
+            <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    required>
+
+            <button
+                    type="submit"
+                    class="auth-btn">
+
+                Login
+
+            </button>
+
+        </form>
+
+        <p
+                th:if="${error}"
+                th:text="${error}"
+                style="color:red;margin-top:15px;">
+        </p>
+
+        <hr style="margin:25px 0; opacity:.2;">
+
+        <p>
+
+            Don't have an account?
+
+        </p>
+
+        <a th:href="@{/register}">
+
+            <button class="btn">
+
+                Create Account
+
+            </button>
+
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+
+    © 2026 QP Archives
+
+</footer>
+
+</body>
+</html>

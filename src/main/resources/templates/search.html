@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Search QP</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<nav>
+    <h2>QP Archives</h2>
+
+    <div>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/login}">Upload QP</a>
+        <a th:href="@{/search}">Search QP</a>
+        <a th:href="@{/about}">About Us</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+
+<div class="hero">
+
+    <h1>
+        Search
+        <span class="highlight">Question Papers</span>
+    </h1>
+
+    <p>
+        Search instantly using the Question Paper Name, Subject or University.
+    </p>
+
+</div>
+
+<!-- SEARCH BOX -->
+
+<div class="center-box">
+
+    <div class="auth-card fade">
+
+        <h2>Search Papers</h2>
+
+        <form th:action="@{/search}" method="get">
+
+            <input
+                    type="text"
+                    name="keyword"
+                    placeholder="Search by QP Name, Subject or University">
+
+            <button
+                    class="auth-btn"
+                    type="submit">
+
+                Search
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- RESULTS -->
+
+<div class="section" th:if="${papers != null}">
+
+    <h2>Search Results</h2>
+
+    <div class="grid" th:if="${!#lists.isEmpty(papers)}">
+
+        <div class="card" th:each="paper : ${papers}">
+
+            <h3 th:text="${paper.qpName}"></h3>
+
+            <p>
+                <strong>Subject :</strong>
+                <span th:text="${paper.subject}"></span>
+            </p>
+
+            <p>
+                <strong>Category :</strong>
+                <span th:text="${paper.category}"></span>
+            </p>
+
+            <p>
+                <strong>University :</strong>
+                <span th:text="${paper.university}"></span>
+            </p>
+
+            <p>
+                <strong>Uploaded :</strong>
+                <span th:text="${paper.uploadDate}"></span>
+            </p>
+
+            <hr style="margin:15px 0; opacity:.2;">
+
+            <a th:href="@{/download/{id}(id=${paper.id})}">
+                <button class="auth-btn" style="margin-top:15px;">
+                    📥 Download Paper
+                </button>
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- No Results -->
+
+    <div
+            th:if="${#lists.isEmpty(papers)}"
+            style="
+                text-align:center;
+                margin-top:40px;
+                color:#8aa9c9;
+                font-size:20px;
+                font-weight:600;
+            ">
+
+        No Question Papers Found.
+
+    </div>
+
+</div>
+
+<footer>
+
+    © 2026 QP Archives
+
+</footer>
+
+</body>
+</html>
